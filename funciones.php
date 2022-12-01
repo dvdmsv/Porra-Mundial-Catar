@@ -45,7 +45,7 @@
             $_SESSION[$grupo][] = $arrGrupo;
             foreach($_SESSION[$grupo] as $clave => $valor){ //Se obtienen los valores del array
                 foreach($valor as $clave2 => $valor2){
-                    echo "<p>" . $valor2 . "</p>";
+                    //echo "<p>" . $valor2 . "</p>";
                 }  
             }
         }else{
