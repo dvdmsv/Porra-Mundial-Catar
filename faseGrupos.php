@@ -28,23 +28,46 @@
             //Grupo A
             $sql = "SELECT nombre, grupo FROM selecciones WHERE grupo = 'A'";
             $resultado = $conexionBD->query($sql);
-            echo '<form id="grupoSelec" action="' . $_SERVER["PHP_SELF"] . '" method="GET">';
+            echo '<form id="grupoSelec" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
             echo "<table class='selecciones'>";
                 echo "<tr><th>Nombre</th><th>Grupo</th></tr>";
+                $contadorCheck = 1;
                 while($registros = $resultado->fetch()){ //Se van obteniendo los registros y se introducen en la tabla
                     echo "<tr>";
                         echo '<td>' . $registros['nombre'] . '</td>';
                         echo "<td>" . $registros['grupo'] . "</td>";
-                        echo '<td><button id="pasaFase" type="submit" name="grupoA" value="' . $registros['nombre'] . "_" . $registros['grupo'] . '" />Pasa de fase</button></td>'; //El valor del boton será el nombre y el grupo
+                        //echo '<td><input type="checkbox" id="pasaFaseA" type="submit" name="rbGA" value="' . $registros['nombre'] . "#" . $registros['grupo'] . '" /></td>'; //El valor del boton será el nombre y el grupo
+                        echo '<td><input type="checkbox" id="pasaFaseA" type="submit" name="rbGA' . $contadorCheck . '" value="' . $registros['nombre'] . "#" . $registros['grupo'] . '" /></td>'; //El valor del boton será el nombre y el grupo
                     echo "</tr>";
+                    $contadorCheck++;
                 }
+                echo '<td><button type="submit" name="grupoA">Pasa de fase</button></td>';
             echo "</table>";
             echo '</form>';
-            if(isset($_GET['grupoA'])){
-                $seleccion = $_GET['grupoA'];
-                $grupo = 'grupoA';
-                $arrGrupo = array();
-                faseGrupos($seleccion, $grupo, $arrGrupo);
+            if(isset($_POST['grupoA'])){
+                $contador = 0;
+                for($i=1; $i<=4; $i++){
+                    if(!empty($_POST['rbGA' . $i])){
+                        $contador++;
+                    }
+                }
+                if($contador>2){
+                    echo '<p>Solo puedes elegir dos equipos</p>';
+                }else if($contador == 1){
+                    echo '<p>Te falta un equipo por elegir</p>';
+                }else if($contador == 2){
+                    for($i=1; $i<=4; $i++){
+                        if(!empty($_POST['rbGA' . $i])){
+                            $seleccion = $_POST['rbGA' . $i];
+                            $grupo = 'grupoA';
+                            $arrGrupo = [];
+                            array_push($arrGrupo, htmlspecialchars($seleccion));
+                            $_SESSION[$grupo][] = $arrGrupo;
+                            echo "<p>" . $_SESSION[$grupo][0][0] . "</p>";
+                            //faseGrupos($seleccion, $grupo);
+                        }
+                    }
+                }
             }
             
 
@@ -66,7 +89,6 @@
             if(isset($_POST['grupoB'])){
                 $seleccion = $_POST['grupoB'];
                 $grupo = 'grupoB';
-                faseGrupos($seleccion, $grupo);
             }
 
             //Grupo C
@@ -87,7 +109,6 @@
             if(isset($_POST['grupoC'])){
                 $seleccion = $_POST['grupoC'];
                 $grupo = 'grupoC';
-                faseGrupos($seleccion, $grupo);
             }
 
             //Grupo D
@@ -108,7 +129,6 @@
             if(isset($_POST['grupoD'])){
                 $seleccion = $_POST['grupoD'];
                 $grupo = 'grupoD';
-                faseGrupos($seleccion, $grupo);
             }
 
             //Grupo E
@@ -129,7 +149,6 @@
             if(isset($_POST['grupoE'])){
                 $seleccion = $_POST['grupoE'];
                 $grupo = 'grupoE';
-                faseGrupos($seleccion, $grupo);
             }
 
             //Grupo F
@@ -150,7 +169,6 @@
             if(isset($_POST['grupoF'])){
                 $seleccion = $_POST['grupoF'];
                 $grupo = 'grupoF';
-                faseGrupos($seleccion, $grupo);
             }
 
             //Grupo G
@@ -171,7 +189,6 @@
             if(isset($_POST['grupoG'])){
                 $seleccion = $_POST['grupoG'];
                 $grupo = 'grupoG';
-                faseGrupos($seleccion, $grupo);
             }
 
             //Grupo H
@@ -192,7 +209,6 @@
             if(isset($_POST['grupoH'])){
                 $seleccion = $_POST['grupoH'];
                 $grupo = 'grupoH';
-                faseGrupos($seleccion, $grupo);
             }
 
         } catch (\PDOException $e) {
