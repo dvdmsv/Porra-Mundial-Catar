@@ -38,18 +38,25 @@
         return false; //Si no ha habido filas devueltas se devuelve false
     }
 
-    function faseGrupos($seleccion, $grupo){
+    function faseGrupos($seleccion, $grupo, $arrGrupo){
         if(!empty($seleccion)){
-            $arrGrupo = [];
-            array_push($arrGrupo, htmlspecialchars($seleccion));
-            $_SESSION[$grupo][] = $arrGrupo;
-            foreach($_SESSION[$grupo] as $clave => $valor){ //Se obtienen los valores del array
-                foreach($valor as $clave2 => $valor2){
-                    //echo "<p>" . $valor2 . "</p>";
-                }  
+            echo "<p>Antes de comprobar</p>";
+            if(!in_array($seleccion, $arrGrupo)){
+                array_push($arrGrupo, htmlspecialchars($seleccion));
+                echo "<p>TRUE</p>";
+                $_SESSION[$grupo][] = $arrGrupo;
+                echo "<p>inicio encganchao</p>";
+                foreach($_SESSION[$grupo] as $clave => $valor){ //Se obtienen los valores del array
+                    foreach($valor as $clave2 => $valor2){
+                        echo "<p>" . $valor2 . "</p>";
+                        echo "<p>encganchao</p>";
+                    }  
+                }
+                echo "<p>fin encganchao</p>";
+            }else{
+                echo "<p>FALSE</p>";
             }
-        }else{
-
+            echo "<p>ARR" . $_SESSION[$grupo][3][0] . "</p>";
         }
     }
 ?>

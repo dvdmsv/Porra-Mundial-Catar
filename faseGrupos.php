@@ -26,24 +26,25 @@
 
         try {
             //Grupo A
-            $sql = "SELECT * FROM selecciones WHERE grupo = 'A'";
+            $sql = "SELECT nombre, grupo FROM selecciones WHERE grupo = 'A'";
             $resultado = $conexionBD->query($sql);
-            echo '<form id="grupoSelec" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
+            echo '<form id="grupoSelec" action="' . $_SERVER["PHP_SELF"] . '" method="GET">';
             echo "<table class='selecciones'>";
                 echo "<tr><th>Nombre</th><th>Grupo</th></tr>";
                 while($registros = $resultado->fetch()){ //Se van obteniendo los registros y se introducen en la tabla
                     echo "<tr>";
                         echo '<td>' . $registros['nombre'] . '</td>';
                         echo "<td>" . $registros['grupo'] . "</td>";
-                        echo '<td><button id="pasaFase" onclick="miFuncion()" type="submit" name="grupoA" value="' . $registros['nombre'] . "#" . $registros['grupo'].'" />Pasa de fase</button></td>'; //El valor del boton será el nombre y el grupo
+                        echo '<td><button id="pasaFase" type="submit" name="grupoA" value="' . $registros['nombre'] . "_" . $registros['grupo'] . '" />Pasa de fase</button></td>'; //El valor del boton será el nombre y el grupo
                     echo "</tr>";
                 }
             echo "</table>";
             echo '</form>';
-            if(isset($_POST['grupoA'])){
-                $seleccion = $_POST['grupoA'];
+            if(isset($_GET['grupoA'])){
+                $seleccion = $_GET['grupoA'];
                 $grupo = 'grupoA';
-                faseGrupos($seleccion, $grupo);
+                $arrGrupo = array();
+                faseGrupos($seleccion, $grupo, $arrGrupo);
             }
             
 
@@ -204,11 +205,5 @@
     <form action="./octavos.php" method="post">
         <button type="submit" id="logoff">Octavos</button>
     </form>
-    <script>
-        function miFuncion() {
-            document.getElementById("pasaFase").disabled = true;
-            //document.getElementById("grupoSelec").submit();
-        }
-    </script>
 </body>
 </html>
