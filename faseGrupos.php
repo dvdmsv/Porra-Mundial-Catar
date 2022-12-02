@@ -8,7 +8,9 @@
     <title>Fase de grupos</title>
 </head>
 <body>
-    
+    <nav class="menu">
+        <a href="./logoff.php">Cerrar sesión</a>
+    </nav>
     <!-- Se importa el archivo con las funciones -->
     <?php
         require_once('funciones.php');
@@ -54,9 +56,7 @@
             echo "Error: ", $e->getMessage(), (int)$e->getCode();
         }
     ?>
-    <form action="./logoff.php" method="post">
-        <button type="submit" id="logoff">Cerrar sesion</button>
-    </form>
+    
     <form action="./octavos.php" method="post">
         <button type="submit" id="logoff">Octavos</button>
     </form>

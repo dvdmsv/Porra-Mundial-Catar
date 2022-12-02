@@ -42,7 +42,9 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    
+    column-gap: 1%;
+    row-gap: 1%;
+    margin: 5%
 }
 
 table, td, th{
@@ -56,5 +58,16 @@ table, td, th{
 }
 
 td, th {
-    width: 150px;
+    width: 130px;
+}
+
+.menu>a {
+    background-color: red;
+    text-decoration: none;
+    padding: 1%;
+    color: black;
+}
+
+.menu {
+    margin-bottom: 2%;
 }
