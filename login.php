@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1 id="h1Login">Iniciar sesión</h1>
+    pagina
     <!-- Formulario HTML -->
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="login">
         <img src="./user.png" alt="user" width="15%">
