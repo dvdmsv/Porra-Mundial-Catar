@@ -38,16 +38,26 @@
         return false; //Si no ha habido filas devueltas se devuelve false
     }
 
-    function faseGrupos($seleccion, $grupo){
-        $arrGrupo = [];
-        array_push($arrGrupo, htmlspecialchars($seleccion));
-        $_SESSION[$grupo][] = $arrGrupo;
-        // foreach($_SESSION[$grupo] as $clave => $valor){ //Se obtienen los valores del array
-        //      foreach($valor as $clave2 => $valor2){
-        //          echo "<p>" . $valor2 . "</p>";
-        //      }  
-        // }
-        //echo "<p>" . $_SESSION[$grupo][0] . "</p>";
-        echo "<p>" . $_SESSION[$grupo][6][0] . "</p>";
+    function faseGrupos($grupo, $letra){
+        $contador = 0;
+        for($i=0; $i<4; $i++){
+            if(!empty($_POST['rbG'. $letra . $i])){
+                $contador++;
+            }
+        }
+        if($contador>2){
+            echo '<p>Solo puedes elegir dos equipos</p>';
+        }else if($contador == 1){
+            echo '<p>Te falta un equipo por elegir</p>';
+        }else if($contador == 2){
+            for($i=0; $i<4; $i++){
+                if(!empty($_POST['rbG'. $letra . $i])){
+                    $seleccion = $_POST['rbG'. $letra . $i];
+                    $arrGrupo = [];
+                    array_push($arrGrupo, htmlspecialchars($seleccion));
+                    $_SESSION[$grupo][] = $arrGrupo;
+                }
+            }
+        }
     }
 ?>

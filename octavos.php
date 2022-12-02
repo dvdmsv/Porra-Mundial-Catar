@@ -39,5 +39,8 @@
         echo "<p>" . $_SESSION['grupoH'][0][0] . "</p>";
         echo "<p>" . $_SESSION['grupoH'][1][0] . "</p>";
     ?>
+     <form action="./logoff.php" method="post">
+        <button type="submit" id="logoff">Cerrar sesion</button>
+    </form>
 </body>
 </html>
