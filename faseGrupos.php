@@ -26,8 +26,8 @@
 
         try {
             $grupos = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']; //Array que contiene las letras de los grupos
-
-            for($i=0; $i<sizeof($grupos); $i++){//Bucle que recorre el array con las letras de los grupos y setea en cada vuelta las variables con la letra correspondiente
+            echo "<div class='tablas'>";
+            for($i=0; $i<sizeof($grupos); $i++){ //Bucle que recorre el array con las letras de los grupos y setea en cada vuelta las variables con la letra correspondiente
                 $sql = "SELECT nombre, grupo FROM selecciones WHERE grupo = '{$grupos[$i]}'"; //Se guarda la consulta SQL
                 $resultado = $conexionBD->query($sql); //Se ejecuta la consulta
                 echo '<form id="grupoSelec" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
@@ -49,6 +49,7 @@
                     faseGrupos('grupo' . $grupos[$i], $grupos[$i]); //Se ejecuta la función
                 } 
             }
+            echo "</div>";
         } catch (\PDOException $e) {
             echo "Error: ", $e->getMessage(), (int)$e->getCode();
         }

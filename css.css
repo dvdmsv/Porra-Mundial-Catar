@@ -38,6 +38,13 @@ body{
     border: solid #577F99 5px;
 }
 
+.tablas{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    
+}
+
 table, td, th{
     margin-left: auto;
     margin-right: auto;
