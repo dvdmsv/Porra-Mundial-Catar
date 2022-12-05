@@ -60,4 +60,14 @@
             }
         }
     }
+
+    function cuartos(){
+        
+    }
+
+    function extraerSeleccion($nombre){
+        $seleccion = explode("#", $nombre);
+        return $seleccion[0];
+
+    }
 ?>
