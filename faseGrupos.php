@@ -40,7 +40,7 @@
                         echo "<tr>";
                             echo '<td>' . $registros['nombre'] . '</td>';
                             echo "<td>" . $registros['grupo'] . "</td>";
-                            echo '<td><input type="checkbox" id="pasaFase" type="submit" name="rbG' . $grupos[$i] . $contadorCheck . '" value="' . $registros['nombre'] . "#" . $registros['grupo'] . '" /></td>'; //El valor del boton será el nombre y el grupo
+                            echo '<td><input type="checkbox" id="pasaFase" name="rbG' . $grupos[$i] . $contadorCheck . '" value="' . $registros['nombre'] . "#" . $registros['grupo'] . '" /></td>'; //El valor del boton será el nombre y el grupo
                         echo "</tr>";
                         $contadorCheck++; //Se incrementa el contador al final de la ejecución
                     }
@@ -52,7 +52,7 @@
                 } 
             }
             echo "</div>";
-        } catch (\PDOException $e) {
+        } catch (PDOException $e) {
             echo "Error: ", $e->getMessage(), (int)$e->getCode();
         }
     ?>

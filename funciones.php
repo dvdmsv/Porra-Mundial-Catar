@@ -61,8 +61,28 @@
         }
     }
 
-    function cuartos(){
-        
+    function cuartos($seleccion, $cruce){
+        if(!empty($_POST[$cruce])){
+            $arrCuart = [];
+            array_push($arrCuart, htmlspecialchars($seleccion));
+            $_SESSION['cuartos'][]= $arrCuart;
+        }
+    }
+
+    function semis($seleccion, $cruce){
+        if(!empty($_POST[$cruce])){
+            $arrSemis = [];
+            array_push($arrSemis, htmlspecialchars($seleccion));
+            $_SESSION['semis'][]= $arrSemis;
+        }
+    }
+
+    function finalTorneo($seleccion, $cruce){
+        if(!empty($_POST[$cruce])){
+            $arrFinal = [];
+            array_push($arrFinal, htmlspecialchars($seleccion));
+            $_SESSION['final'][]= $arrFinal;
+        }
     }
 
     function extraerSeleccion($nombre){

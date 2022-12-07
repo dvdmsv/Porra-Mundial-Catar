@@ -38,6 +38,15 @@ body{
     border: solid #577F99 5px;
 }
 
+.faseGrupos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 1%;
+    row-gap: 1%;
+    margin: 5%
+}
+
 .tablas{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
