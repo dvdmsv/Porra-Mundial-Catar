@@ -1,11 +1,11 @@
 body{
-    background-color: #85C1E9;
+    background-color: #800000;
     background-image: url(./logo1.jpg);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .login {
-    background-color: #74A9CC;
+    background-color: #FF4000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,6 +14,28 @@ body{
     border-radius: 15px;
     margin: 0 30% 0 30%;
     border: solid #577F99 5px;
+}
+
+.menuPrincipal {
+    background-color: #FF4000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2%;
+    border-radius: 15px;
+    margin: 0 30% 0 30%;
+    border: solid #577F99 5px;
+}
+
+.menuPrincipal>a {
+   text-decoration: none;
+   color: black;
+   padding: 15px;
+   border: solid green;
+   margin: 15px;
+   border-radius: 15px;
+   background-color: rgb(155, 97, 97);
 }
 
 .login>label {
@@ -33,7 +55,8 @@ body{
     margin-left: 30%;
     margin-right: 30%;
     font-size: 250%;
-    background-color: #74A9CC;
+    padding: 15px;
+    background-color: #FF4000;
     border-radius: 15px;
     border: solid #577F99 5px;
 }
@@ -71,12 +94,42 @@ td, th {
 }
 
 .menu>a {
-    background-color: red;
+    background-color: rgb(155, 97, 97);
     text-decoration: none;
     padding: 1%;
     color: black;
 }
 
-.menu {
-    margin-bottom: 2%;
+.menu>a:hover {
+    background-color: white;
 }
+
+.menu {
+    margin-bottom: 5%;
+    background-color: rgb(155, 97, 97);
+    padding: 1%;
+}
+
+#pasarFase {
+    background-color: white;
+    border: solid black 5px;
+    padding: 10px;
+    margin-left: 50px;
+    margin-top: 5px;
+    font-size: 25px;
+}
+
+#pasarFase:hover {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    
+}
+
+#mensInfo {
+    color: red;
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 0 5px black;
+}
+

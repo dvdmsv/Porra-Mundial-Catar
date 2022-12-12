@@ -10,6 +10,7 @@
 <body>
     <nav class="menu">
         <a href="./logoff.php">Cerrar sesión</a>
+        <a href="./menu.html">Menu</a>
     </nav>
     <!-- Se importa el archivo con las funciones -->
     <?php
@@ -58,7 +59,7 @@
     ?>
     
     <form action="./octavos.php" method="post">
-        <button type="submit" id="logoff">Octavos</button>
+        <button type="submit" id="pasarFase">Octavos</button>
     </form>
 </body>
 </html>

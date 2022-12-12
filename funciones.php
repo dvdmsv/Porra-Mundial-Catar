@@ -38,7 +38,8 @@
         return false; //Si no ha habido filas devueltas se devuelve false
     }
 
-    function faseGrupos($grupo, $letra){
+    //Funcion que se encarga de generar los cruces de octavos a partir de la fase de grupos
+    function faseGrupos($grupo, $letra){  //Recibe el grupo y la letra
         $contador = 0;
         for($i=0; $i<4; $i++){
             if(!empty($_POST['rbG'. $letra . $i])){
@@ -46,9 +47,9 @@
             }
         }
         if($contador>2){
-            echo '<p>Solo puedes elegir dos equipos</p>';
+            echo '<h1 id="mensInfo">Solo puedes elegir dos equipos</h1>';
         }else if($contador == 1){
-            echo '<p>Te falta un equipo por elegir</p>';
+            echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
         }else if($contador == 2){
             for($i=0; $i<4; $i++){
                 if(!empty($_POST['rbG'. $letra . $i])){
@@ -100,8 +101,21 @@
         $registros = $consulta->rowCount();
         if($registros>0){
             echo "<h1 id='mensInfo'>Resultado guardado correctamente...</h1>"; //se muestra un error ya que no se está logueado
-            header("refresh:1; url=faseGrupos.php"); //se redirige a la pagina de login
+            header("refresh:1; url=menu.html"); //se redirige a la pagina de login
             exit;
+        }
+    }
+
+    function eliminarRegistro($seleccion){
+        $conexionBD = conectarBD();
+        $sql = 'DELETE FROM ganador WHERE seleccion = ?';
+        $consulta = $conexionBD->prepare($sql);
+        $consulta->bindParam(1, $seleccion);
+        $consulta->execute();
+        $registros = $consulta->rowCount();
+        if($registros>0){
+            echo "<h1 id='mensInfo'>Registro eliminado</h1>"; //se muestra un error ya que no se está logueado
+            header("refresh:1"); //se redirige a la pagina de login
         }
     }
 ?>

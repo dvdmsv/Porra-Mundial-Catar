@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-12-2022 a las 08:44:51
+-- Tiempo de generación: 12-12-2022 a las 13:54:30
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -42,6 +42,17 @@ INSERT INTO `autenticacion` (`username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `ganador`
+--
+
+CREATE TABLE `ganador` (
+  `username` varchar(20) NOT NULL,
+  `seleccion` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `selecciones`
 --
 
@@ -55,38 +66,72 @@ CREATE TABLE `selecciones` (
 --
 
 INSERT INTO `selecciones` (`nombre`, `grupo`) VALUES
+('Alemania', 'E'),
+('Arabia Saudí', 'C'),
+('Argentina', 'C'),
+('Australia', 'D'),
+('Bélgica', 'F'),
+('Brasil', 'G'),
+('Camerún', 'G'),
+('Canadá', 'F'),
 ('Catar', 'A'),
+('Corea del Sur', 'H'),
+('Costa Rica', 'E'),
+('Croacia', 'F'),
+('Dinamarca', 'D'),
 ('Ecuador', 'A'),
-('Paises Bajos', 'A'),
+('EEUU', 'B'),
+('España', 'E'),
+('Francia', 'D'),
+('Gales', 'B'),
+('Ghana', 'H'),
+('Holanda', 'A'),
 ('Inglaterra', 'B'),
 ('Irán', 'B'),
-('Estados Unidos', 'B'),
-('Gales', 'B'),
-('Senegal', 'A'),
-('Argentina', 'C'),
-('Arabia Saudí', 'C'),
+('Japón', 'E'),
+('Marruecos', 'F'),
 ('Mexico', 'C'),
 ('Polonia', 'C'),
-('Francia', 'D'),
-('Australia', 'D'),
-('Dinamarca', 'D'),
-('Túnez', 'D'),
-('España', 'E'),
-('Costa Rica', 'E'),
-('Alemania', 'E'),
-('Japón', 'E'),
-('Bélgica', 'F'),
-('Canadá', 'F'),
-('Marruecos', 'F'),
-('Croacia', 'F'),
-('Brasil', 'G'),
+('Portugal', 'H'),
+('Senegal', 'A'),
 ('Serbia', 'G'),
 ('Suiza', 'G'),
-('Camerún', 'G'),
-('Portugal', 'H'),
-('Ghana', 'H'),
-('Uruguay', 'H'),
-('Corea del Sur', 'H');
+('Túnez', 'D'),
+('Uruguay', 'H');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `autenticacion`
+--
+ALTER TABLE `autenticacion`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indices de la tabla `ganador`
+--
+ALTER TABLE `ganador`
+  ADD KEY `username` (`username`),
+  ADD KEY `seleccion` (`seleccion`);
+
+--
+-- Indices de la tabla `selecciones`
+--
+ALTER TABLE `selecciones`
+  ADD PRIMARY KEY (`nombre`);
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `ganador`
+--
+ALTER TABLE `ganador`
+  ADD CONSTRAINT `ganador_ibfk_1` FOREIGN KEY (`username`) REFERENCES `autenticacion` (`username`) ON DELETE CASCADE,
+  ADD CONSTRAINT `ganador_ibfk_2` FOREIGN KEY (`seleccion`) REFERENCES `selecciones` (`nombre`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -8,6 +8,10 @@
     <title>Cuartos</title>
 </head>
 <body>
+    <nav class="menu">
+        <a href="./logoff.php">Cerrar sesión</a>
+        <a href="./menu.html">Menu</a>
+    </nav>
     <?php
         require_once('./funciones.php');
     ?>
@@ -122,11 +126,8 @@
             }
         echo "<div>";
     ?>
-    <form action="./logoff.php" method="post">
-        <button type="submit" id="logoff">Cerrar sesion</button>
-    </form>
     <form action="./semis.php" method="post">
-        <button type="submit" id="semis">Semifinales</button>
+        <button type="submit" id="pasarFase">Semifinales</button>
     </form>
 </body>
 </html>

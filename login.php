@@ -33,10 +33,10 @@
     <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") { //Si el forumario es enviado
             if(empty($_POST['user'])){ //Se comprueba si está vacío el usuario, si lo está
-                echo "<h1 id='error'>Error: nombre de usuario vacío</h1>"; //se notifica que el nombre de usuario está vacío
+                echo "<h1 id='mensInfo'>Error: nombre de usuario vacío</h1>"; //se notifica que el nombre de usuario está vacío
             }else{ //si no
                 if(empty($_POST['passwd'])){ //Se comprueba si la contraseña está vacía, si lo está
-                    echo "<h1 id='error'>Error: contraseña vacía</h1>"; //se notifica que el campo contraseña está vacio
+                    echo "<h1 id='mensInfo'>Error: contraseña vacía</h1>"; //se notifica que el campo contraseña está vacio
                 }else{ //sino
                     //Se asignan los campos de texto a variables
                     $user = $_POST['user'];
@@ -44,9 +44,9 @@
                     $conexionBD = conectarBD(); //Se conecta con la base de datos
 
                     if(autenticacionBD($conexionBD, $user, $password)){ //Se utiliza la función para autenticarse, si devuelve true
-                        header("Location: faseGrupos.php"); //Se redirige a la pagina de productos
+                        header("Location: menu.html"); //Se redirige a la pagina de productos
                     }else{ //si no
-                        echo "<h1 id='error'>Usuario o contraseña incorrecto</h1>"; //se notifica el error
+                        echo "<h1 id='mensInfo'>Usuario o contraseña incorrecto</h1>"; //se notifica el error
                     }
                 }
             }
