@@ -88,6 +88,20 @@
     function extraerSeleccion($nombre){
         $seleccion = explode("#", $nombre);
         return $seleccion[0];
+    }
 
+    function guardarGanador($ganador){
+        $conexionBD = conectarBD();
+        $sql = 'INSERT INTO ganador(username, seleccion) VALUES (?, ?)';
+        $consulta = $conexionBD->prepare($sql);
+        $consulta->bindParam(1, $_SESSION['user']);
+        $consulta->bindParam(2, $ganador);
+        $consulta->execute();
+        $registros = $consulta->rowCount();
+        if($registros>0){
+            echo "<h1 id='mensInfo'>Resultado guardado correctamente...</h1>"; //se muestra un error ya que no se está logueado
+            header("refresh:1; url=faseGrupos.php"); //se redirige a la pagina de login
+            exit;
+        }
     }
 ?>

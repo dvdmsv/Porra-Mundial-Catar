@@ -13,6 +13,24 @@
     ?>
     <?php
         session_start();
+        
+        if(!isset($_SESSION['user'])){ //Si la variable de sesion user no está seteada
+            echo "<h1 id='mensInfo'>No estás logueado. Redirigiendo a login...</h1>"; //se muestra un error ya que no se está logueado
+            header("refresh:3; url=login.php"); //se redirige a la pagina de login
+            exit;
+        }
+
+        for($i=0; $i<7; $i++){ //Se recorre el array de grupos
+            if(!isset($_SESSION['cuartos'][$i][0])){ //Si la variable de sesion user no está seteada
+                for($i=0; $i<7; $i++){ //se eliminan los elementos que haya en los arrays
+                    unset($_SESSION['cuartos'][$i][0]);
+                }
+                echo "<h1 id='mensInfo'>Faltan equipos por elegir...</h1>"; //se muestra un error indicando que faltan selecciones por elegir
+                header("refresh:1; url=octavos.php"); //se redirige a la pagina de faseGrupos
+                exit;
+            }
+        }
+
         //Tablas con los emparejamientos de cuartos
         echo "<div class='tablas'>";
             echo '<form id="formCuartos" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';

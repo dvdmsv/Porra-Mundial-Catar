@@ -13,6 +13,13 @@
     ?>
     <?php
         session_start();
+        
+        if(!isset($_SESSION['user'])){ //Si la variable de sesion user no está seteada
+            echo "<h1 id='mensInfo'>No estás logueado. Redirigiendo a login...</h1>"; //se muestra un error ya que no se está logueado
+            header("refresh:3; url=login.php"); //se redirige a la pagina de login
+            exit;
+        }
+
         $grupos = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']; //Array que contiene las letras de los grupos
 
         for($i=0; $i<sizeof($grupos); $i++){ //Se recorre el array de grupos
@@ -25,6 +32,7 @@
                 exit;
             }
         }
+        
         //Tablas con los emparejamientos de octavos
         echo "<div class='tablas'>";
             echo '<form id="formOctavos" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
