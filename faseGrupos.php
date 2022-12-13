@@ -17,7 +17,7 @@
         require_once('funciones.php');
     ?>
     <?php
-        session_start();
+        session_start(); //Se inicia la sesion
 
         if(!isset($_SESSION['user'])){ //Si la variable de sesion user no está seteada
             echo "<h1 id='mensInfo'>No estás logueado. Redirigiendo a login...</h1>"; //se muestra un error ya que no se está logueado

@@ -39,7 +39,7 @@
                 echo "<table>";
                     echo "<tr><th>Equipo</th><th>Ganador</th></tr>";
                     echo "<tr>";
-                        $seleccion1 =  $_SESSION['final'][0][0];
+                        $seleccion1 =  $_SESSION['final'][0][0]; //Se obtiene un finalista a partir del array de sesion final
                         echo "<td>" . $seleccion1 . "</td>";
                         echo "<td><input type='radio' name='final' value={$seleccion1} ></td>";
                     echo "</tr>";
@@ -53,8 +53,12 @@
                     echo "</tr>";
                 echo "</table>";
         echo '</form>';
-        if(isset($_POST['ganador'])){
-            guardarGanador($_POST['final']);
+        if(isset($_POST['ganador'])){ //Si se ha pulsado el boton para enviar un ganador
+            if(isset($_POST['final'])){ //Y contiene una seleccion
+                guardarGanador($_POST['final']); //Se ejecuta la funcion para guardar el ganador seleccionado
+            }else{
+                echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
+            }
         }
     ?>
     <form action="./final.php" method="post">

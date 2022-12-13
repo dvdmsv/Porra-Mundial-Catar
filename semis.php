@@ -39,7 +39,7 @@
                 echo "<table>";
                     echo "<tr><th>Equipo</th><th>Ganador</th></tr>";
                     echo "<tr>";
-                        $seleccion1 =  $_SESSION['semis'][0][0];
+                        $seleccion1 =  $_SESSION['semis'][0][0]; //Se obtiene el equipo a partir del array de sesion de semifinales
                         echo "<td>" . $seleccion1 . "</td>";
                         echo "<td><input type='radio' name='semis1' value={$seleccion1} ></td>";
                     echo "</tr>";
@@ -53,8 +53,12 @@
                     echo "</tr>";
                 echo "</table>";
         echo '</form>';
-        if(isset($_POST['formSemis1'])){
-            finalTorneo($_POST['semis1'], 'semis1');
+        if(isset($_POST['formSemis1'])){ //Si se ha pulsado el boton de enviar equipo
+            if(isset($_POST['semis1'])){ //Y el contenido del emparejamiento contiene una seleccion
+                finalTorneo($_POST['semis1'], 'semis1'); //Se ejecuta la funcion para enviar al equipo a la final
+            }else{
+                echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
+            }
         }
 
         echo '<form id="formSemis" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
@@ -76,7 +80,11 @@
                 echo "</table>";
         echo '</form>';
         if(isset($_POST['formSemis2'])){
-            finalTorneo($_POST['semis2'], 'semis2');
+            if(isset($_POST['semis2'])){
+                finalTorneo($_POST['semis2'], 'semis2');
+            }else{
+                echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
+            }
         }
     ?>
     <form action="./final.php" method="post">

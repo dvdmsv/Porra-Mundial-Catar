@@ -16,7 +16,7 @@
         require_once('funciones.php');
     ?>
     <?php
-        session_start();
+        session_start(); //Se inicia sesion
         
         if(!isset($_SESSION['user'])){ //Si la variable de sesion user no está seteada
             echo "<h1 id='mensInfo'>No estás logueado. Redirigiendo a login...</h1>"; //se muestra un error ya que no se está logueado
@@ -43,7 +43,7 @@
                 echo "<table>";
                     echo "<tr><th>Equipo</th><th>Ganador</th></tr>";
                     echo "<tr>";
-                        $seleccion1 = extraerSeleccion($_SESSION['grupoA'][0][0]);
+                        $seleccion1 = extraerSeleccion($_SESSION['grupoA'][0][0]); //Se extrae la selección la seleccion del nombre guardado en la variable de sesion
                         echo "<td>" . $seleccion1 . "</td>";
                         echo "<td><input type='radio' name='octavos1' value={$seleccion1} ></td>";
                     echo "</tr>";
@@ -57,8 +57,12 @@
                     echo "</tr>";
                 echo "</table>";
             echo '</form>';
-            if(isset($_POST['formOctavos1'])){
-                cuartos($_POST['octavos1'], 'octavos1');
+            if(isset($_POST['formOctavos1'])){ //Si se ha pulsado el botón de el emparejamiento de octavos
+                if(isset($_POST['octavos1'])){ //Si está seteada la variable
+                   cuartos($_POST['octavos1'], 'octavos1');  //Se ejecuta la función
+                }else{
+                    echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
+                }
             }
             
 
@@ -81,7 +85,11 @@
                 echo "</table>";
             echo '</form>';
             if(isset($_POST['formOctavos2'])){
-                cuartos($_POST['octavos2'], 'octavos2');
+                if(isset($_POST['octavos2'])){
+                   cuartos($_POST['octavos2'], 'octavos2'); 
+                }else{
+                    echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
+                }
             }
 
             echo '<form id="formOctavos" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
@@ -103,7 +111,11 @@
                 echo "</table>";
             echo '</form>';
             if(isset($_POST['formOctavos3'])){
-                cuartos($_POST['octavos3'], 'octavos3');
+                if(isset($_POST['octavos3'])){
+                   cuartos($_POST['octavos3'], 'octavos3'); 
+                }else{
+                    echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
+                }
             }
 
             echo '<form id="formOctavos" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
@@ -125,7 +137,11 @@
                 echo "</table>";
             echo '</form>';
             if(isset($_POST['formOctavos4'])){
-                cuartos($_POST['octavos4'], 'octavos4');
+                if(isset($_POST['octavos4'])){
+                   cuartos($_POST['octavos4'], 'octavos4'); 
+                }else{
+                    echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
+                }
             }
 
             echo '<form id="formOctavos" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
@@ -147,7 +163,11 @@
                 echo "</table>";
             echo '</form>';
             if(isset($_POST['formOctavos5'])){
-                cuartos($_POST['octavos5'], 'octavos5');
+                if(isset($_POST['octavos5'])){
+                   cuartos($_POST['octavos5'], 'octavos5'); 
+                }else{
+                    echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
+                }
             }
 
             echo '<form id="formOctavos" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
@@ -169,7 +189,11 @@
                 echo "</table>";
             echo '</form>';
             if(isset($_POST['formOctavos6'])){
-                cuartos($_POST['octavos6'], 'octavos6');
+                if(isset($_POST['octavos6'])){
+                   cuartos($_POST['octavos6'], 'octavos6'); 
+                }else{
+                    echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
+                }
             }
 
             echo '<form id="formOctavos" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
@@ -191,7 +215,11 @@
                 echo "</table>";
             echo '</form>';
             if(isset($_POST['formOctavos7'])){
-                cuartos($_POST['octavos7'], 'octavos7');
+                if(isset($_POST['octavos7'])){
+                   cuartos($_POST['octavos7'], 'octavos7'); 
+                }else{
+                    echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
+                }
             }
 
             echo '<form id="formOctavos" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
@@ -213,7 +241,11 @@
                 echo "</table>";
             echo '</form>';
             if(isset($_POST['formOctavos8'])){
-                cuartos($_POST['octavos8'], 'octavos8');
+                if(isset($_POST['octavos8'])){
+                   cuartos($_POST['octavos8'], 'octavos8'); 
+                }else{
+                    echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
+                }
             }
         echo "</div>";
     ?>

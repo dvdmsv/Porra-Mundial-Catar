@@ -41,7 +41,7 @@
                 echo "<table>";
                     echo "<tr><th>Equipo</th><th>Ganador</th></tr>";
                     echo "<tr>";
-                        $seleccion1 =  $_SESSION['cuartos'][0][0];
+                        $seleccion1 =  $_SESSION['cuartos'][0][0]; //Se obtiene el equipo del array de sesion de los cuartos
                         echo "<td>" . $seleccion1 . "</td>";
                         echo "<td><input type='radio' name='cuartos1' value={$seleccion1} ></td>";
                     echo "</tr>";
@@ -55,8 +55,12 @@
                     echo "</tr>";
                 echo "</table>";
             echo '</form>';
-            if(isset($_POST['formCuartos1'])){
-                semis($_POST['cuartos1'], 'cuartos1');
+            if(isset($_POST['formCuartos1'])){ //Si se ha pulsado el boton para seleccionar el equipo
+                if(isset($_POST['cuartos1'])){ //Y el contenido del emparejamiento contiene una seleccion
+                    semis($_POST['cuartos1'], 'cuartos1'); //Se ejecuta la funcion para enviar la seleccion a semifinales
+                }else{
+                    echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
+                }
             }
 
             echo '<form id="formCuartos" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
@@ -78,7 +82,11 @@
                 echo "</table>";
             echo '</form>';
             if(isset($_POST['formCuartos2'])){
-                semis($_POST['cuartos2'], 'cuartos2');
+                if(isset($_POST['cuartos2'])){
+                    semis($_POST['cuartos2'], 'cuartos2');
+                }else{
+                    echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
+                }
             }
 
             echo '<form id="formCuartos" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
@@ -100,7 +108,11 @@
                 echo "</table>";
             echo '</form>';
             if(isset($_POST['formCuartos3'])){
-                semis($_POST['cuartos3'], 'cuartos3');
+                if(isset($_POST['cuartos3'])){
+                    semis($_POST['cuartos3'], 'cuartos3');
+                }else{
+                    echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
+                }
             }
 
             echo '<form id="formCuartos" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
@@ -122,7 +134,11 @@
                 echo "</table>";
             echo '</form>';
             if(isset($_POST['formCuartos4'])){
-                semis($_POST['cuartos4'], 'cuartos4');
+                if(isset($_POST['cuartos4'])){
+                    semis($_POST['cuartos4'], 'cuartos4');
+                }else{
+                    echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
+                }
             }
         echo "<div>";
     ?>

@@ -19,6 +19,7 @@
         <input type="password" name="passwd" id="">
         <button type="submit" value="Enviar">Iniciar Sesion</button>
     </form>
+    
 
     <!-- Se importa el archivo con las funciones -->
     <?php

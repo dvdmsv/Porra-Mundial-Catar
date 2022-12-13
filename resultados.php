@@ -27,13 +27,13 @@
         $conexionBD = conectarBD();
 
         try {
-            $sql = 'SELECT seleccion from ganador WHERE username = ?';
+            $sql = 'SELECT seleccion from ganador WHERE username = ?'; //Se genera una consulta para mostrar las predicciones del usuario
             $consulta = $conexionBD->prepare($sql);
             $consulta->bindParam(1, $_SESSION['user']);
             $consulta->execute();
-            if($consulta->rowCount() == 0){
+            if($consulta->rowCount() == 0){ //Si no obtiene resultados es que no hay predicciones
                 echo "<h1 id='mensInfo'>Sin predicciones</h1>";
-            }else{
+            }else{ //Si hay resultados se muestra una table con las predicciones del usuario
                 echo '<form id="grupoSelec" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
                 echo "<table class='selecciones'>";
                     echo "<tr><th>Nº Prediccion</th><th>Ganador</th></tr>";
@@ -48,13 +48,13 @@
                     }
                 echo "</table>";
                 echo '</form>';
-                if(isset($_POST['eliminarRegistro'])){
-                    eliminarRegistro($_POST['eliminarRegistro']);
+                if(isset($_POST['eliminarRegistro'])){ //Si se ha pulsado el boton de eliminar registro
+                    eliminarRegistro($_POST['eliminarRegistro']); //Se ejecuta la funcion
                 }
             }
             
         } catch (\Throwable $th) {
-            
+            echo "Error: ", $e->getMessage(), (int)$e->getCode();
         }
     ?>
 </body>
