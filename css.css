@@ -16,6 +16,21 @@ body{
     border: solid #577F99 5px;
 }
 
+.login>a,  .login>button, .login>input {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: white;
+    color: black;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+.login>button:hover, .login>a:hover {
+    background-color: green;
+}
+
 .menuPrincipal {
     background-color: #FF4000;
     display: flex;
@@ -102,6 +117,7 @@ td, th {
 
 .menu>a:hover {
     background-color: white;
+    border: solid black 2px;
 }
 
 .menu {
@@ -133,3 +149,25 @@ td, th {
     text-shadow: 0 5px black;
 }
 
+#enlacePredicciones {
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    padding: 15px;
+    margin-left: 45%;
+    background-color: white;
+    color: black;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+#titulo {
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+    padding: 15px;
+    background-color: #FF4000;
+    border-radius: 15px;
+    border: solid #577F99 5px;
+
+}

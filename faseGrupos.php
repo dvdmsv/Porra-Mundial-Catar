@@ -11,6 +11,8 @@
     <nav class="menu">
         <a href="./logoff.php">Cerrar sesión</a>
         <a href="./menu.html">Menu</a>
+        <a href="./resultados.php">Predicciones</a>
+        <a href="ranking.php">Ranking</a>
     </nav>
     <!-- Se importa el archivo con las funciones -->
     <?php
@@ -25,9 +27,8 @@
             exit;
         }
 
-        $conexionBD = conectarBD(); //Conexion con la base de datos
-
         try {
+            $conexionBD = conectarBD(); //Conexion con la base de datos
             $grupos = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']; //Array que contiene las letras de los grupos
             echo "<div class='tablas'>";
             for($i=0; $i<sizeof($grupos); $i++){ //Bucle que recorre el array con las letras de los grupos y setea en cada vuelta las variables con la letra correspondiente

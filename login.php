@@ -18,6 +18,7 @@
         <label>Conraseña</label>
         <input type="password" name="passwd" id="">
         <button type="submit" value="Enviar">Iniciar Sesion</button>
+        <a href="./registro.php">Registrarse</a>
     </form>
     
 

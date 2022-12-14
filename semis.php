@@ -12,9 +12,11 @@
         <a href="./logoff.php">Cerrar sesión</a>
         <a href="./menu.html">Menu</a>
     </nav>
+
     <?php
         require_once("./funciones.php");
     ?>
+
     <?php
         session_start();
     
@@ -87,6 +89,7 @@
             }
         }
     ?>
+    
     <form action="./final.php" method="post">
         <button type="submit" id="pasarFase">Final</button>
     </form>

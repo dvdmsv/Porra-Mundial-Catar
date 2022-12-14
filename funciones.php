@@ -38,6 +38,31 @@
         return false; //Si no ha habido filas devueltas se devuelve false
     }
 
+    //Funcion que registra a un usuario en el sistema
+    function registro($username, $password){ //Recibe como parametros el nombre del usuario y una contraseña
+        $conexionBD = conectarBD(); //Se conecta con la base de datos
+        $sql1 = 'SELECT username FROM autenticacion WHERE username = ?'; //Se ejecuta una consulta buscando al usuario pasado por parametros
+        $consulta1 = $conexionBD->prepare($sql1);
+        $consulta1->bindParam(1, $username);
+        $consulta1->execute();
+        $registros = $consulta1->rowCount();
+        if($registros>0){ //Si la consulta devuelve registros es que el usuario ya existe en la base de datos
+            echo "<h1 id='mensInfo'>El nombre de usuario ya existe</h1>"; //Se notifica
+        }else{ //Si no existe
+            $sql2 = 'INSERT INTO autenticacion(username, password) VALUES (?, ?)'; //Se ejecuta una consulta insertando el usuario y su contraseña en la base de datos
+            $consulta2 = $conexionBD->prepare($sql2);
+            $consulta2->bindParam(1, $username);
+            $passwordEncrypt = md5($password); //Se encripta la contraseña antes de introducirla
+            $consulta2->bindParam(2, $passwordEncrypt);
+            $consulta2->execute();
+            $registros = $consulta2->rowCount();
+            if($registros>0){ //Si la ejecucion devuelve registros el usuario se ha guardado correctamente
+                echo "<h1 id='mensInfo'>Usuario registrado correctamente</h1>"; //Se notifica
+                header("refresh:1; url=login.php"); //Se redirige a la pagina de login
+            }
+        }
+    }
+
     //Funcion que se encarga de generar los cruces de octavos a partir de la fase de grupos
     function faseGrupos($grupo, $letra){  //Recibe el grupo y la letra
         $contador = 0; //Se inicia un contador en 0
