@@ -34,18 +34,23 @@
             $conexionBD = conectarBD();
             $sql = 'SELECT count(seleccion) vecesElegida, seleccion FROM ganador GROUP BY seleccion ORDER BY vecesElegida DESC'; //Consulta a la base de datos que muestra el numero de veces que se repite una seleccion en la tabla ganador ordenado de mayor a menor. Para mostrar el numero de veces que se ha elegido una seleccion como campeona
             $resultado = $conexionBD->query($sql);
-            echo "<table class='selecciones'>";
-            echo "<tr><th>Ranking</th><th>Veces elegida ganadora</th><th>Ganador</th></tr>";
-            $ranking = 1;
-            while($registros = $resultado->fetch()){
-                echo "<tr>";
-                echo '<td >' .  $ranking . 'º</td>';
-                    echo '<td >' . $registros['vecesElegida'] . '</td>';
-                    echo '<td>' . $registros['seleccion'] . '</td>';
-                echo "</tr>";
-                $ranking++;
-            }
-            echo "</table>";
+            $registros = $resultado->rowCount(); //Se obtiene el numero de registros
+            if($registros>0){ //Si hay registros se crea una tabla con ellos
+                echo "<table class='selecciones'>";
+                echo "<tr><th>Ranking</th><th>Veces elegida ganadora</th><th>Ganador</th></tr>";
+                $ranking = 1;
+                while($registros = $resultado->fetch()){
+                    echo "<tr>";
+                    echo '<td >' .  $ranking . 'º</td>';
+                        echo '<td >' . $registros['vecesElegida'] . '</td>';
+                        echo '<td>' . $registros['seleccion'] . '</td>';
+                    echo "</tr>";
+                    $ranking++;
+                }
+                echo "</table>";
+            }else{ //Si no los hay
+                echo "<h1 id='mensInfo'>Aún no hay registros</h1>"; //Se muestra un mensaje indicandolo
+            } 
         }catch(PDOException $e){
             echo "Error: ", $e->getMessage(), (int)$e->getCode();
         }
