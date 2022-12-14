@@ -16,10 +16,10 @@
 
     <!-- Formulario HTML -->
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="login">
-        <img src="./user.png" alt="user" width="15%">
+        <img src="./img/user.png" alt="user" width="15%">
         <label>Usuario</label>
         <input type="text" name="user" id="">
-        <img src="./passwd.png" alt="user" width="15%">
+        <img src="./img/passwd.png" alt="user" width="15%">
         <label>Conraseña</label>
         <input type="password" name="passwd" id="">
         <label>Repetir conraseña</label>
