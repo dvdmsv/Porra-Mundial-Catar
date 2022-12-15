@@ -15,7 +15,7 @@
         <a href="./resultados.php">Predicciones</a>
     </nav>
     
-    <h1 id="titulo">Selecciones mas ganadoras según usuarios</h1>
+    <h1 id="titulo">Selecciones más ganadoras según usuarios</h1>
 
     <?php
         require_once('funciones.php');
