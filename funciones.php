@@ -141,11 +141,12 @@
     }
 
     //Funcion que elimina los registros de ganadores del usuario
-    function eliminarRegistro($seleccion){ //Se pasa por parámetros el nombre de la seleccion
+    function eliminarRegistro($seleccion, $username){ //Se pasa por parámetros el nombre de la seleccion
         $conexionBD = conectarBD(); //Se conecta con la base de datos
-        $sql = 'DELETE FROM ganador WHERE seleccion = ?'; //Se guarda la consulta
+        $sql = 'DELETE FROM ganador WHERE seleccion = ? AND username = ?'; //Se guarda la consulta
         $consulta = $conexionBD->prepare($sql); //Se prepara la consulta
         $consulta->bindParam(1, $seleccion); //el primer parametro se guarda la seleccion pasada por parametros
+        $consulta->bindParam(2, $username);
         $consulta->execute(); //Se ejecuta la consulta 
         $registros = $consulta->rowCount(); //Se obtiene el numero de registros afectados por la consulta SQL
         if($registros>0){ //Si es mas que 0 (se han visto afectados registros)

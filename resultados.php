@@ -51,10 +51,10 @@
                 echo "</table>";
                 echo '</form>';
                 if(isset($_POST['eliminarRegistro'])){ //Si se ha pulsado el boton de eliminar registro
-                    eliminarRegistro($_POST['eliminarRegistro']); //Se ejecuta la funcion
+                    eliminarRegistro($_POST['eliminarRegistro'], $_SESSION['user']); //Se ejecuta la funcion
                 }
             }
-        } catch (\Throwable $th) {
+        } catch (PDOException $e) {
             echo "Error: ", $e->getMessage(), (int)$e->getCode();
         }
     ?>
