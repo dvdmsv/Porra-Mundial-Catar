@@ -19,6 +19,11 @@
         require_once("./Vista/menu.html");
     }else if($_REQUEST['controlador'] == "fase_grupos"){
         require_once("./Controlador/faseGrupos_controlador.php");
+<<<<<<< HEAD
+=======
+    }else if($_REQUEST['controlador'] == "pasarFaseGrupos"){
+        require_once("./Controlador/faseGrupos_controlador.php");
+>>>>>>> 2e5d2252772a368e7c5d71b58cbc6de100c8a424
     }
     
     

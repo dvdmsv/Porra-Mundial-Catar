@@ -37,7 +37,13 @@
                 echo "<td><button type='submit' name='grupo{$grupos[$a]}'>Pasa de fase</button></td>";
             echo "</table>";
             echo '</form>';
+<<<<<<< HEAD
            
+=======
+            if(isset($_POST['grupo' . $grupos[$a]])){ //Cuando el botón es pulsado
+                faseGrupos('grupo' . $grupos[$i], $grupos[$i]); //Se ejecuta la función
+            } 
+>>>>>>> 2e5d2252772a368e7c5d71b58cbc6de100c8a424
         }
         echo "</div>";
 

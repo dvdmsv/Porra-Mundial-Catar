@@ -26,8 +26,12 @@
     
     require_once("Vista/faseGrupos.php");
 
+<<<<<<< HEAD
     if(isset($_POST['grupo' . $grupos[$a]])){ //Cuando el botón es pulsado
         faseGrupos('grupo' . $grupos[$i], $grupos[$i]); //Se ejecuta la función
     } 
+=======
+    
+>>>>>>> 2e5d2252772a368e7c5d71b58cbc6de100c8a424
     
 ?>
