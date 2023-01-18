@@ -1,6 +1,6 @@
 <?php
-    require_once("Modelo/usuario.php");
-    require_once("Vista/login.php");
+    require_once("../Modelo/usuario.php");
+    require_once("../Vista/login.php");
 
      if ($_SERVER["REQUEST_METHOD"] == "POST") { //Si el forumario es enviado
             if(empty($_POST['user'])){ //Se comprueba si está vacío el usuario, si lo está
@@ -11,7 +11,7 @@
                 }else{ //sino
                     $user = new Usuario($_POST['user'], $_POST['passwd']);
                     if($user->autenticacionBD()){ //Se utiliza la función para autenticarse, si devuelve true
-                        header("Location: index.php?controlador=menu"); //Se redirige a la pagina de menu
+                        header("Location: ../Vista/menu.html"); //Se redirige a la pagina de menu
                         echo "<h1 id='mensInfo'>Usuario correcto</h1>";
                     }else{ //si no
                         echo "<h1 id='mensInfo'>Usuario o contraseña incorrecto</h1>"; //se notifica el error

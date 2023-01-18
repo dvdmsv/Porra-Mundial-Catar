@@ -15,7 +15,7 @@
     <h1 id="h1Login">Registro</h1>
 
     <!-- Formulario HTML -->
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get" class="login">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="login">
         <img src="../img/user.png" alt="user" width="15%">
         <label>Usuario</label>
         <input type="text" name="user" id="">
@@ -28,7 +28,7 @@
     </form>
 
     <?php
-        require_once('Controlador/registro_controlador.php');
+        require_once('../Controlador/registro_controlador.php');
     ?>
 </body>
 </html>

@@ -6,7 +6,7 @@
         private $bd;
 
         public function __construct($username, $password){
-            require_once("Modelo/bdMundial.php");
+            require_once("../Modelo/bdMundial.php");
             $this->username = $username;
             $this->password = md5($password);
             $this->bd = bdMundial::conexionBD();

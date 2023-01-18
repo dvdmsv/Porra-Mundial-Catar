@@ -5,7 +5,7 @@
         private $grupo;
 
         public function __construct($grupo){
-            require_once("Modelo/bdMundial.php");
+            require_once("../Modelo/bdMundial.php");
             $this->nombres = array();
             $this->grupo = $grupo;
             $this->bd = bdMundial::conexionBD();

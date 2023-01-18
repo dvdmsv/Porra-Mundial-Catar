@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="../Estilos/css.css">
     <title>Fase de grupos</title>
 </head>
 <body>
@@ -16,10 +16,12 @@
     </nav>
     <!-- Se importa el archivo con las funciones -->
     <?php
-        //require_once('Controlador/faseGrupos_controlador.php');
+        
+        session_start(); //Se inicia la sesion
+        require_once('../Controlador/faseGrupos_controlador.php');
+        require_once('../Controlador/pasoDeFase_controlador.php');
     ?>
     <?php
-        session_start(); //Se inicia la sesion
         echo "<div class='tablas'>";
         for($a=0; $a<sizeof($arrayEquipos); $a++){ //Bucle que recorre el array con las letras de los grupos y setea en cada vuelta las variables con la letra correspondiente
             echo '<form id="grupoSelec" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
@@ -30,26 +32,21 @@
                     echo "<tr>";
                         echo '<td>' . $arrayEquipos[$a][$b] . '</td>';
                         echo '<td>' . $grupos[$a] . '</td>';
-                        echo '<td><input type="checkbox" id="pasaFase" name="rbG' . $arrayEquipos[$a][$b] . $contadorCheck . '" value="' . $arrayEquipos[$a][$b] . "#" . $grupos[$a] . '" /></td>'; //El valor del boton será el nombre y el grupo
+                        echo '<td><input type="checkbox" id="pasaFase" name="rbG' . $grupos[$a] . $contadorCheck . '" value="' . $arrayEquipos[$a][$b] . "#" . $grupos[$a] . '" /></td>'; //El valor del boton será el nombre y el grupo
                     echo "</tr>";
                     $contadorCheck++; //Se incrementa el contador al final de la ejecución
                 }
                 echo "<td><button type='submit' name='grupo{$grupos[$a]}'>Pasa de fase</button></td>";
             echo "</table>";
             echo '</form>';
-<<<<<<< HEAD
-           
-=======
             if(isset($_POST['grupo' . $grupos[$a]])){ //Cuando el botón es pulsado
-                faseGrupos('grupo' . $grupos[$i], $grupos[$i]); //Se ejecuta la función
+                faseGrupos('grupo' .  $grupos[$a],  $grupos[$a]); //Se ejecuta la función
             } 
->>>>>>> 2e5d2252772a368e7c5d71b58cbc6de100c8a424
         }
         echo "</div>";
-
     ?>
-    
-    <form action="./octavos.php" method="post">
+
+    <form action="../Vista/octavos.php" method="post">
         <button type="submit" id="pasarFase">Octavos</button>
     </form>
 </body>
