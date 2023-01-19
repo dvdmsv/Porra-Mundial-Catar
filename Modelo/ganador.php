@@ -21,7 +21,7 @@
                 $registros = $consulta->rowCount(); //Se obtiene el numero de registros afectados por la consulta SQL
                 if($registros>0){ //Si es mas que 0 (se han visto afectados registros)
                     echo "<h1 id='mensInfo'>Resultado guardado correctamente...</h1>"; //se muestra un mensaje de info
-                    header("refresh:1; url=menu.html"); //se redirige a la pagina de menu
+                    header("refresh:1; url=menu.php"); //se redirige a la pagina de menu
                     exit;
                 }else{
                     echo "<h1 id='mensInfo'>Resultado guardado correctamente...</h1>"; //Error al guardar

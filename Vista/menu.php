@@ -18,7 +18,7 @@
     <div class="menuPrincipal">
         <a href="../Vista/faseGrupos.php">Hacer prediccion</a>
         <a href="./resultados.php">Ver predicciones</a>
-        <a href="ranking.php">Ranking de selecciones</a>
+        <a href="./ranking.php">Ranking de selecciones</a>
     </div>  
 </body>
 </html>

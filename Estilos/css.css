@@ -1,0 +1,365 @@
+body{
+    background-image: url(../img/logo1.jpg);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media screen and (max-width: 1280px) {
+    .login {
+        background-color: #577F99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 2%;
+        border-radius: 15px;
+        margin: 0 30% 0 30%;
+        border: solid #2a91d6 5px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    .login>a, .login>button, .login>input, .input>label {
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        text-decoration: none;
+        padding: 5px;
+        width: 50%;
+        font-size: 50%;
+        text-align: center;
+        margin-top: 5px;
+        background-color: white;
+        color: black;
+        border: solid 1px black;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+
+    .login>img{
+        width: 25%;
+    }
+
+    .login>button:hover, .login>a:hover {
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+
+    .menuPrincipal {
+        background-color: #577F99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 2%;
+        border-radius: 15px;
+        margin: 0 30% 0 30%;
+        border: solid #2a91d6 5px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+
+    .menuPrincipal>a {
+        text-decoration: none;
+        color: black;
+        padding: 15px;
+        border: solid 2px #000000;
+        margin: 15px;
+        border-radius: 15px;
+        background-color: #2a91d6;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+
+    .login>label {
+        display: inline-block;
+    }
+
+    .login>input {
+        margin: 2%;
+    }
+
+    .login>input:hover {
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+
+    #h1Login {
+        text-align: center;
+        margin-left: 30%;
+        margin-right: 30%;
+        font-size: 100%;
+        padding: 15px;
+        background-color: #577F99;
+        border-radius: 15px;
+        border: solid #2a91d6 5px;
+    }
+
+    .faseGrupos{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 1%;
+        row-gap: 1%;
+        margin: 5%
+    }
+
+    .tablas{
+        display: flex;
+       flex-direction: column;
+    }
+
+    table, td, th{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1%;
+        border: solid #3A5566 2px;
+        border-collapse: collapse;
+        padding: 5px;
+        background-color: #74A9CC;
+    }
+
+    table{
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
+
+    td, th {
+        width: 130px;
+    }
+
+    .menu>a {
+        background-color: rgb(155, 97, 97);
+        text-decoration: none;
+        padding: 1%;
+        color: black;
+    }
+
+    .menu>a:hover {
+        background-color: white;
+        border: solid black 2px;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+
+    .menu {
+        margin-bottom: 5%;
+        background-color: rgb(155, 97, 97);
+        padding: 1%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #pasarFase {
+        background-color: white;
+        border: solid black 5px;
+        padding: 10px;
+        margin-left: 50px;
+        margin-top: 5px;
+        font-size: 25px;
+    }
+
+    #pasarFase:hover {
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        
+    }
+
+    #mensInfo {
+        color: red;
+        text-align: center;
+        font-size: 50px;
+        text-shadow: 0 5px black;
+    }
+
+    #enlacePredicciones {
+        text-align: center;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        text-decoration: none;
+        padding: 15px;
+        margin-left: 45%;
+        background-color: white;
+        color: black;
+        border: solid 1px black;
+        border-radius: 10px;
+    }
+
+    #titulo {
+        margin-left: 30%;
+        margin-right: 30%;
+        text-align: center;
+        padding: 15px;
+        background-color: #577F99;
+        border-radius: 15px;
+        border: solid #2a91d6 5px;
+
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .login {
+        background-color: #577F99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 2%;
+        border-radius: 15px;
+        margin: 0 30% 0 30%;
+        border: solid #2a91d6 5px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    .login>a, .login>button, .login>input {
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        text-decoration: none;
+        padding: 5px;
+        margin-top: 5px;
+        background-color: white;
+        color: black;
+        border: solid 1px black;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+
+    .login>button:hover, .login>a:hover {
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+
+    .menuPrincipal {
+        background-color: #577F99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 2%;
+        border-radius: 15px;
+        margin: 0 30% 0 30%;
+        border: solid #2a91d6 5px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+
+    .menuPrincipal>a {
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+    border: solid 2px #000000;
+    margin: 15px;
+    border-radius: 15px;
+    background-color: #2a91d6;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+
+    .login>label {
+        display: inline-block;
+    }
+
+    .login>input {
+        margin: 2%;
+    }
+
+    .login>input:hover {
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+
+    #h1Login {
+        text-align: center;
+        margin-left: 30%;
+        margin-right: 30%;
+        font-size: 250%;
+        padding: 15px;
+        background-color: #577F99;
+        border-radius: 15px;
+        border: solid #2a91d6 5px;
+    }
+
+    .faseGrupos{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 1%;
+        row-gap: 1%;
+        margin: 5%
+    }
+
+    .tablas{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 1%;
+        row-gap: 1%;
+        margin: 5%
+    }
+
+    table, td, th{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1%;
+        border: solid #3A5566 2px;
+        border-collapse: collapse;
+        padding: 5px;
+        background-color: #74A9CC;
+    }
+
+    table{
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
+
+    td, th {
+        width: 130px;
+    }
+
+    .menu>a {
+        background-color: rgb(155, 97, 97);
+        text-decoration: none;
+        padding: 1%;
+        color: black;
+    }
+
+    .menu>a:hover {
+        background-color: white;
+        border: solid black 2px;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+
+    .menu {
+        margin-bottom: 5%;
+        background-color: rgb(155, 97, 97);
+        padding: 1%;
+    }
+
+    #pasarFase {
+        background-color: white;
+        border: solid black 5px;
+        padding: 10px;
+        margin-left: 50px;
+        margin-top: 5px;
+        font-size: 25px;
+    }
+
+    #pasarFase:hover {
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        
+    }
+
+    #mensInfo {
+        color: red;
+        text-align: center;
+        font-size: 50px;
+        text-shadow: 0 5px black;
+    }
+
+    #enlacePredicciones {
+        text-align: center;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        text-decoration: none;
+        padding: 15px;
+        margin-left: 45%;
+        background-color: white;
+        color: black;
+        border: solid 1px black;
+        border-radius: 10px;
+    }
+
+    #titulo {
+        margin-left: 30%;
+        margin-right: 30%;
+        text-align: center;
+        padding: 15px;
+        background-color: #577F99;
+        border-radius: 15px;
+        border: solid #2a91d6 5px;
+
+    }
+}

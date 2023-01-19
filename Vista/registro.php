@@ -18,12 +18,12 @@
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="login">
         <img src="../img/user.png" alt="user" width="15%">
         <label>Usuario</label>
-        <input type="text" name="user" id="">
+        <input type="text" name="user">
         <img src="../img/passwd.png" alt="user" width="15%">
         <label>Conraseña</label>
-        <input type="password" name="passwd" id="">
+        <input type="password" name="passwd">
         <label>Repetir conraseña</label>
-        <input type="password" name="passwd2" id="">
+        <input type="password" name="passwd2">
         <button type="submit" name="controlador" value="registro_controlador">Registrar</button>
     </form>
 

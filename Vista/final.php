@@ -39,9 +39,5 @@
                 echo "</table>";
         echo '</form>';
     ?>
-    
-    <form action="./final.php" method="post">
-        <button type="submit" id="pasarFase">Final</button>
-    </form>
 </body>
 </html>

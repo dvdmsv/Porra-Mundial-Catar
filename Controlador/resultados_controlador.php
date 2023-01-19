@@ -8,17 +8,18 @@
     }
 
     try{
+        $predicciones;
         require_once("../Modelo/bdMundial.php");
         $sql = 'SELECT count(seleccion) as vecesElegido, seleccion from ganador WHERE username = ? GROUP BY seleccion ORDER BY count(seleccion) DESC'; //Se genera una consulta para mostrar las predicciones del usuario
         $consulta = bdMundial::conexionBD()->prepare($sql);
         $consulta->bindParam(1, $_SESSION['user']);
         $consulta->execute();
         if($consulta->rowCount() == 0){ //Si no obtiene resultados es que no hay predicciones
+            $predicciones = false;
             echo "<h1 id='mensInfo'>Sin predicciones</h1>";
             echo "<a id='enlacePredicciones' href='./faseGrupos.php'>Hacer prediccion</a>";
         }else{ //Si hay resultados se muestra una tabla con las predicciones del usuario en la VISTA
-            
-
+            $predicciones = true;
             if(isset($_POST['eliminarRegistro'])){ //Si se ha pulsado el boton de eliminar registro
                 require_once('../Modelo/ganador.php');
                 $eliminarGanador = new Ganador($_SESSION['user'], $_POST['eliminarRegistro']);
