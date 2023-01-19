@@ -10,7 +10,7 @@
 <body>
     <nav class="menu">
         <a href="./logoff.php">Cerrar sesión</a>
-        <a href="./menu.html">Menu</a>
+        <a href="./menu.php">Menu</a>
     </nav>
 
     <?php
@@ -38,14 +38,6 @@
                     echo "</tr>";
                 echo "</table>";
         echo '</form>';
-        // if(isset($_POST['ganador'])){ //Si se ha pulsado el boton para enviar un ganador
-        //     if(isset($_POST['final'])){ //Y contiene una seleccion
-        //         //guardarGanador($_POST['final']); //Se ejecuta la funcion para guardar el ganador seleccionado
-        //         $_SESSION['final'] = $_POST['final'];
-        //     }else{
-        //         echo '<h1 id="mensInfo">Te falta un equipo por elegir</h1>';
-        //     }
-        // }
     ?>
     
     <form action="./final.php" method="post">

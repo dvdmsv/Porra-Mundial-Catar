@@ -10,9 +10,9 @@
 <body>
     <nav class="menu">
         <a href="./logoff.php">Cerrar sesión</a>
-        <a href="./menu.html">Menu</a>
+        <a href="./menu.php">Menu</a>
         <a href="./resultados.php">Predicciones</a>
-        <a href="ranking.php">Ranking</a>
+        <a href="./ranking.php">Ranking</a>
     </nav>
     <!-- Se importa el archivo con las funciones -->
     <?php

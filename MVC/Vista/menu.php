@@ -8,6 +8,9 @@
     <title>Menu</title>
 </head>
 <body>
+    <?php
+        require_once("../Controlador/menu_controlador.php");
+    ?>
     <nav class="menu">
         <a href="./logoff.php">Cerrar sesión</a>
     </nav>

@@ -10,7 +10,7 @@
 <body>
     <nav class="menu">
         <a href="./logoff.php">Cerrar sesión</a>
-        <a href="./menu.html">Menu</a>
+        <a href="./menu.php">Menu</a>
     </nav>
     <?php
          session_start(); //Se inicia sesion

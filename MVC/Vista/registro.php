@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav class="menu">
-        <a href="index.php">Login</a>
+        <a href="../index.php">Login</a>
     </nav>
 
     <h1 id="h1Login">Registro</h1>

@@ -44,9 +44,9 @@
     //Funcion que se encarga de generar los cruces de la final
     function finalTorneo($seleccion, $cruce){ //Recibe una seleccion y el cruce correspondiente
         if(!empty($_POST[$cruce])){ //Si el cruce no está vacío
-            $arrFinal = [];
+            $arrFinal = array();
             array_push($arrFinal, htmlspecialchars($seleccion)); //Se introduce el equipo en el array de la final
-            $_SESSION['final'][]= $arrFinal; //Se almacena en la variable de sesion correspondiente a la final
+            $_SESSION['final'][] = $arrFinal; //Se almacena en la variable de sesion correspondiente a la final
         }
     }
 

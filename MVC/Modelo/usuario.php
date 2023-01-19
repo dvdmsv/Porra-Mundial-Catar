@@ -12,6 +12,7 @@
             $this->bd = bdMundial::conexionBD();
         }
 
+        //Función que autentica un usuario frente a la base de datos
         public function autenticacionBD(){
             $consulta = $this->bd->prepare('SELECT username, password  FROM autenticacion WHERE username = ? AND password = ?');
             $consulta->bindParam(1, $this->username); //Se establece el primer parámetro

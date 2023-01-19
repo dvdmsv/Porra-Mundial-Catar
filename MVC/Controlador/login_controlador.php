@@ -11,7 +11,7 @@
                 }else{ //sino
                     $user = new Usuario($_POST['user'], $_POST['passwd']);
                     if($user->autenticacionBD()){ //Se utiliza la función para autenticarse, si devuelve true
-                        header("Location: ../Vista/menu.html"); //Se redirige a la pagina de menu
+                        header("Location: ../Vista/menu.php"); //Se redirige a la pagina de menu
                         echo "<h1 id='mensInfo'>Usuario correcto</h1>";
                     }else{ //si no
                         echo "<h1 id='mensInfo'>Usuario o contraseña incorrecto</h1>"; //se notifica el error
