@@ -8,14 +8,14 @@
     <title>Menu</title>
 </head>
 <body>
-<nav class="menu">
+    <nav class="menu">
         <a href="./logoff.php">Cerrar sesión</a>
         <a href="./menu.php">Menu</a>
         <a href="./faseGrupos.php">Hacer predicción</a>
         <a href="./resultados.php">Predicciones</a>
     </nav>
     
-    <h1 id="h1Login">Selecciones más ganadoras según usuarios</h1>
+    <h1 id="h1Ranking">Selecciones más ganadoras según usuarios</h1>
 
     <?php
         require_once('../Controlador/ranking_controlador.php');
