@@ -1,6 +1,14 @@
 <?php
+    /**
+     * Clase bdMundial
+     */
     class bdMundial{
-        //Funcion que devuelve una conexion de la base de datos
+                
+        /**
+         * Funcion conexionBD que devuelve una conexion con la base de datos
+         *
+         * @return conexion con la base de datos
+         */
         public static function conexionBD(){
             $options = [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

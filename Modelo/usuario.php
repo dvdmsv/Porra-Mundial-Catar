@@ -1,20 +1,41 @@
 <?php
-    session_start();
+    
+    /**
+     * Clase Usuario que contiene a un usuario que se inicia en la web
+     */
     class Usuario{
+        /**
+         * username contiene el nombre de usuario
+         * password contiene la contraseña de usuario
+         * bd contiene la conexión con la base de datos
+         * 
+         */
         private $username;
         private $password;
         private $bd;
-
+        
+        /**
+         * __construct constructor de la clase 
+         *
+         * @param  mixed $username nombre de usuario
+         * @param  mixed $password contraseña de usuario
+         * @return void
+         */
         public function __construct($username, $password){
             require_once("../Modelo/bdMundial.php");
             $this->username = $username;
             $this->password = md5($password);
             $this->bd = bdMundial::conexionBD();
         }
-
-        //Función que autentica un usuario frente a la base de datos
+    
+        /**
+         * autenticacionBD funcion que autentica a un usuario frente a la base de datos
+         *
+         * @return boolean si el usuario existe en la base de datos
+         */
         public function autenticacionBD(){
-            $consulta = $this->bd->prepare('SELECT username, password  FROM autenticacion WHERE username = ? AND password = ?');
+            session_start(); //Se inicia la sesión
+            $consulta = $this->bd->prepare('SELECT username, password  FROM autenticacion WHERE username = ? AND password = ?'); //Se ejecuta una consulta preparada
             $consulta->bindParam(1, $this->username); //Se establece el primer parámetro
             $consulta->bindParam(2, $this->password); //Se establece el segundo parámetro
             $consulta->execute(); //Se ejecuta la consulta
@@ -23,11 +44,17 @@
                 $fila = $consulta->fetch(); //Se obtiene la fila
                 $_SESSION['user'] = $fila['username']; //Se asigna el valor de la fila "username" a la variable $_SESSION["user"]
                 return true; //Se retorna true
+            }else{
+                return false; //Si no se han encontrado registros se retorna false;
             }
-            return false;
         }
-
-        //Funcion que registra un usuario en la base de datos
+     
+        /**
+         * registroBD funcion que registra un usuario en la base de datos
+         *
+         * 
+         * @return void
+         */
         public function registroBD(){
             if(!self::autenticacionBD()){ //Si el usuario NO existe en la base de datos
                 $consulta = $this->bd->prepare('INSERT INTO autenticacion(username, password) VALUES (?, ?)');
