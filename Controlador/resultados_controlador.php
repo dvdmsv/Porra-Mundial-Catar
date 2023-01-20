@@ -17,7 +17,7 @@
         if($consulta->rowCount() == 0){ //Si no obtiene resultados es que no hay predicciones
             $predicciones = false;
             echo "<h1 id='mensInfo'>Sin predicciones</h1>";
-            echo "<div id='enlacePredicciones' ><a href='./faseGrupos.php'>Hacer prediccion</a></div>";
+            echo "<div id='enlacePredicciones'><a href='./faseGrupos.php'>Hacer prediccion</a></div>";
         }else{ //Si hay resultados se muestra una tabla con las predicciones del usuario en la VISTA
             $predicciones = true;
             if(isset($_POST['eliminarRegistro'])){ //Si se ha pulsado el boton de eliminar registro
