@@ -15,7 +15,7 @@
         private $bd;
         
         /**
-         * __construct constructor de la clase 
+         * __construct constructor de la clase
          *
          * @param  mixed $username nombre de usuario
          * @param  mixed $password contraseña de usuario
@@ -25,7 +25,7 @@
             require_once("../Modelo/bdMundial.php");
             $this->username = $username;
             $this->password = md5($password);
-            $this->bd = bdMundial::conexionBD();
+            $this->bd = bdMundial::conexionBD(); //Almacena la conexión con la base de datos
         }
     
         /**

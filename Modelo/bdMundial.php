@@ -2,8 +2,7 @@
     /**
      * Clase bdMundial
      */
-    class bdMundial{
-                
+    class bdMundial{  
         /**
          * Funcion conexionBD que devuelve una conexion con la base de datos
          *

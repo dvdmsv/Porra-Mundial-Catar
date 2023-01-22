@@ -1,9 +1,25 @@
 <?php
+    /**
+     * Clase Ganador
+     */
     class Ganador{
+        /**
+         * username contiene el nombre de usuario
+         * seleccion contiene el nombre de la selección
+         * bd contiene la conexión con la base de datos
+         */
         private $username;
         private $seleccion;
         private $bd;
 
+        /**
+         * Constructor de la clase
+         * Establece el nombre de usuario, la seleccion ganadora y almacena la conexión con la base de datos
+         * 
+         * @param username nombre de usuario 
+         * @param seleccion nombre de la selección ganadora
+         * @return void
+         */
         public function __construct($username, $seleccion){
             require_once("../Modelo/bdMundial.php");
             $this->username = $username;
@@ -11,6 +27,10 @@
             $this->bd = bdMundial::conexionBD();
         }
 
+        /**
+         * Función que introduce una selección ganadora en la base de datos
+         * @return void
+         */
         public function introducirGanador(){
             try{
                 $sql = 'INSERT INTO ganador(username, seleccion) VALUES (?, ?)'; //Se guarda en una variable la consulta 
@@ -33,6 +53,10 @@
             }
         }
 
+        /**
+         * Funcion que elimina un ganador de la base de datos
+         * @return void
+         */
         public function eliminarGanador(){
             try{
                 $sql = 'DELETE FROM ganador WHERE seleccion = ? AND username = ?'; //Se guarda la consulta
