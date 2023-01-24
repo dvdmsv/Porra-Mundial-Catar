@@ -8,13 +8,10 @@
     }
 
     $grupos = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']; //Array que contiene las letras de los grupos
-    $arrayEquipos = array();
-    for($i=0; $i<sizeof($grupos); $i++){
-        $selecciones = new Selecciones($grupos[$i]);
-        array_push($arrayEquipos, $selecciones->obtenerEquipos());
+    $arrayEquipos = array(); //Array que contendrá los equipos 
+    for($i=0; $i<sizeof($grupos); $i++){ //Bucle que dará tantas vueltas como grupos del arrat $grupos
+        $selecciones = new Selecciones($grupos[$i]); //en cada vuelta se crea un objeto Selecciones que recibe el grupo[i] en cada momento
+        array_push($arrayEquipos, $selecciones->obtenerEquipos()); //Se introduce en el array $arrayEquipos el resultado de obtener los equipos de ese grupo en cada vuelta
     }
     require_once("../Vista/faseGrupos.php");
-
-    
-    
 ?>

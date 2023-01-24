@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-    header("Location: ./Vista/login.php");
+    header("Location: ./Vista/login.php"); //Index redirige al login de la web
 ?>
 </body>
 </html>

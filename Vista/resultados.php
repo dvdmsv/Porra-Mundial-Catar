@@ -23,11 +23,11 @@
             echo '<form id="grupoSelec" action="' . $_SERVER["PHP_SELF"] . '" method="POST">';
             echo "<table class='selecciones'>";
                 echo "<tr><th>Veces elegido ganador</th><th>Ganador</th></tr>";
-                while($registros = $consulta->fetch()){
+                while($registros = $consulta->fetch()){ //Se van obteniendo los registros y mostrando en una tabla
                     echo "<tr>";
                         echo '<td >' . $registros['vecesElegido'] . '</td>';
                         echo '<td>' . $registros['seleccion'] . '</td>';
-                        echo "<td><button type='submit' name='eliminarRegistro' value='{$registros['seleccion']}'>Eliminar prediccion</button></td>";
+                        echo "<td><button type='submit' name='eliminarRegistro' value='{$registros['seleccion']}'>Eliminar prediccion</button></td>"; //El valor del botón tendrá el nombre de la selección 
                     echo "</tr>";
                 }
             echo "</table>";

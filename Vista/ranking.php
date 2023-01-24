@@ -25,14 +25,14 @@
         if($registros>0){ //Si hay registros se crea una tabla con ellos
             echo "<table class='selecciones'>";
             echo "<tr><th>Ranking</th><th>Veces elegida ganadora</th><th>Ganador</th></tr>";
-            $ranking = 1;
-            while($registros = $resultado->fetch()){
+            $ranking = 1; //Variable que muestra el numero de ranking incrementando su valor
+            while($registros = $resultado->fetch()){ //Se van obteniendo los registros e introduciendo en una tabla
                 echo "<tr>";
                 echo '<td >' .  $ranking . 'º</td>';
                     echo '<td >' . $registros['vecesElegida'] . '</td>';
                     echo '<td>' . $registros['seleccion'] . '</td>';
                 echo "</tr>";
-                $ranking++;
+                $ranking++; //Por cada vuelta se incrementa el valor del ranking
             }
             echo "</table>";
         }else{ //Si no los hay

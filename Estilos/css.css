@@ -1,9 +1,9 @@
 @media screen and (max-width: 1280px) {
-    body{
+    body {
         background: url("../img/logo2.jpg");
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
         background-size: cover;
-        
+
     }
 
     .login {
@@ -20,8 +20,11 @@
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
 
-    .login>a, .login>button, .login>input, .input>label {
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    .login>a,
+    .login>button,
+    .login>input,
+    .input>label {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
         text-decoration: none;
         padding: 5px;
         width: 25%;
@@ -35,12 +38,13 @@
         box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     }
 
-    .login>img{
+    .login>img {
         width: 10%;
         height: 10%;
     }
 
-    .login>button:hover, .login>a:hover {
+    .login>button:hover,
+    .login>a:hover {
         box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     }
 
@@ -94,7 +98,7 @@
         border: solid #2a91d6 5px;
     }
 
-    #h1Ranking{
+    #h1Ranking {
         text-align: center;
         margin-left: 20%;
         margin-right: 20%;
@@ -105,7 +109,7 @@
         border: solid #2a91d6 5px;
     }
 
-    .faseGrupos{
+    .faseGrupos {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
@@ -114,12 +118,14 @@
         margin: 5%
     }
 
-    .tablas{
+    .tablas {
         display: flex;
-       flex-direction: column;
+        flex-direction: column;
     }
 
-    table, td, th{
+    table,
+    td,
+    th {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 1%;
@@ -129,11 +135,12 @@
         background-color: #74A9CC;
     }
 
-    table{
+    table {
         box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     }
 
-    td, th {
+    td,
+    th {
         width: 130px;
     }
 
@@ -185,7 +192,7 @@
         border-radius: 10px;
     }
 
-    #enlacePredicciones{
+    #enlacePredicciones {
         text-align: center;
     }
 
@@ -201,12 +208,12 @@
 }
 
 @media screen and (min-width: 1280px) {
-    body{
+    body {
         background: url("../img/logo2.jpg");
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
         background-size: cover;
     }
-    
+
     .login {
         background-color: #577F99;
         display: flex;
@@ -220,8 +227,10 @@
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
 
-    .login>a, .login>button, .login>input {
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    .login>a,
+    .login>button,
+    .login>input {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
         text-decoration: none;
         padding: 5px;
         margin-top: 5px;
@@ -232,7 +241,8 @@
         box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     }
 
-    .login>button:hover, .login>a:hover {
+    .login>button:hover,
+    .login>a:hover {
         box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     }
 
@@ -250,14 +260,14 @@
     }
 
     .menuPrincipal>a {
-    text-decoration: none;
-    color: black;
-    padding: 15px;
-    border: solid 2px #000000;
-    margin: 15px;
-    border-radius: 15px;
-    background-color: #2a91d6;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        text-decoration: none;
+        color: black;
+        padding: 15px;
+        border: solid 2px #000000;
+        margin: 15px;
+        border-radius: 15px;
+        background-color: #2a91d6;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     }
 
     .login>label {
@@ -283,7 +293,18 @@
         border: solid #2a91d6 5px;
     }
 
-    .faseGrupos{
+    #h1Ranking {
+        text-align: center;
+        margin-left: 20%;
+        margin-right: 20%;
+        font-size: 55%;
+        padding: 15px;
+        background-color: #577F99;
+        border-radius: 15px;
+        border: solid #2a91d6 5px;
+    }
+
+    .faseGrupos {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
@@ -292,7 +313,7 @@
         margin: 5%
     }
 
-    .tablas{
+    .tablas {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
@@ -301,7 +322,9 @@
         margin: 5%
     }
 
-    table, td, th{
+    table,
+    td,
+    th {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 1%;
@@ -311,11 +334,12 @@
         background-color: #74A9CC;
     }
 
-    table{
+    table {
         box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     }
 
-    td, th {
+    td,
+    th {
         width: 130px;
     }
 
@@ -350,7 +374,7 @@
     #pasarFase:hover {
         padding: 10px;
         box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-        
+
     }
 
     #mensInfo {
@@ -369,7 +393,7 @@
         border-radius: 10px;
     }
 
-    #enlacePredicciones{
+    #enlacePredicciones {
         text-align: center;
     }
 

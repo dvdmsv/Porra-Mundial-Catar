@@ -5,7 +5,7 @@
     $grupos = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']; //Array que contiene las letras de los grupos
 
     for($i=0; $i<sizeof($grupos); $i++){ //Se recorre el array de grupos
-        if(!isset($_SESSION['grupo' . $grupos[$i]][0][0])){ //Si la variable de sesion user no está seteada
+        if(!isset($_SESSION['grupo' . $grupos[$i]][0][0])){ //Si la variable de sesion del equipo en cada vuelta del bucle no está seteada 
             for($i=0; $i<sizeof($grupos); $i++){ //se eliminan los elementos que haya en los arrays
                 unset($_SESSION['grupo' . $grupos[$i]]);
             }

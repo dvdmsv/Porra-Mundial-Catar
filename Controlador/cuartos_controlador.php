@@ -1,11 +1,5 @@
 <?php
-    /**
-     * Modelo selecciones.php
-     */
     require_once("../Modelo/selecciones.php");
-    /**
-     * Vista cuartos.php
-     */
     require_once("../Vista/cuartos.php");
     
     for($i=0; $i<7; $i++){ //Se recorre el array de grupos
@@ -18,6 +12,4 @@
             exit;
         }
     }
-
-
 ?>

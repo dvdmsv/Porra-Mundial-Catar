@@ -14,9 +14,7 @@
         <a href="./resultados.php">Predicciones</a>
         <a href="./ranking.php">Ranking</a>
     </nav>
-    <!-- Se importa el archivo con las funciones -->
     <?php
-        
         session_start(); //Se inicia la sesion
         require_once('../Controlador/faseGrupos_controlador.php');
         require_once('../Controlador/pasoDeFase_controlador.php');
@@ -36,16 +34,17 @@
                     echo "</tr>";
                     $contadorCheck++; //Se incrementa el contador al final de la ejecución
                 }
-                echo "<td><button type='submit' name='grupo{$grupos[$a]}'>Pasa de fase</button></td>";
+                echo "<td><button type='submit' name='grupo{$grupos[$a]}'>Pasa de fase</button></td>"; //En cada vuelta se crea un botón para enviar los equipos de cada grupo a la siguiente fase
             echo "</table>";
             echo '</form>';
             if(isset($_POST['grupo' . $grupos[$a]])){ //Cuando el botón es pulsado
-                faseGrupos('grupo' .  $grupos[$a],  $grupos[$a]); //Se ejecuta la función
+                faseGrupos('grupo' .  $grupos[$a],  $grupos[$a]); //Se ejecuta la función para pasar a la siguiente fase
             } 
         }
         echo "</div>";
     ?>
 
+    <!-- Botón para pasar a la siguiente fase del tornero -->
     <form action="../Vista/octavos.php" method="post">
         <button type="submit" id="pasarFase">Octavos</button>
     </form>

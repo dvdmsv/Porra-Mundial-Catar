@@ -15,7 +15,7 @@
                 $usuario = new Usuario($_POST['user'],  $_POST['passwd']);
                 if($usuario->registroBD()){
                     echo "<h1 id='mensInfo'>Usuario registrado correctamente</h1>"; //Se notifica
-                    header("refresh:1; url=../index.php"); //Se redirige a la pagina de login
+                    header("refresh:1; url=../index.php"); //Se redirige a la pagina de login por seguridad para que el usuario se loguee con la nueva cuenta creada
                 }
             }
         }
