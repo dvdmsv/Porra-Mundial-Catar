@@ -130,8 +130,7 @@ ALTER TABLE `selecciones`
 -- Filtros para la tabla `ganador`
 --
 ALTER TABLE `ganador`
-  ADD CONSTRAINT `ganador_ibfk_1` FOREIGN KEY (`username`) REFERENCES `autenticacion` (`username`) ON DELETE CASCADE,
-  ADD CONSTRAINT `ganador_ibfk_2` FOREIGN KEY (`seleccion`) REFERENCES `selecciones` (`nombre`);
+  ADD CONSTRAINT `ganador_ibfk_1` FOREIGN KEY (`username`) REFERENCES `autenticacion` (`username`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
